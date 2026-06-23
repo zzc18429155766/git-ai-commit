@@ -1,0 +1,47 @@
+# Example configuration for git-ai-commit
+# Copy this to your project root as .git-ai-commit.yml
+
+# AI backend to use: openai | anthropic | ollama
+backend: openai
+
+# Model name (optional - uses backend default if not set)
+# model: gpt-4o
+# model: claude-sonnet-4-20250514
+# model: llama3.1
+
+# Auto-commit without interactive prompt
+auto_commit: false
+
+# Generate a detailed commit body (not just subject)
+include_body: true
+
+# Maximum subject line length (default: 72)
+max_subject_length: 72
+
+# AI temperature (0.0 = deterministic, 1.0 = creative)
+temperature: 0.3
+
+# Language for commit messages (ISO 639-1)
+language: en
+
+# Add emoji prefix to commit messages
+emoji: false
+
+# Add Signed-off-by trailer
+signoff: false
+
+# Allowed commit types (comment out to disable)
+allowed_types:
+  - feat
+  - fix
+  - refactor
+  - docs
+  - chore
+  - perf
+  - test
+  - style
+  - ci
+  - build
+
+# Ollama-specific settings
+# ollama_url: http://localhost:11434

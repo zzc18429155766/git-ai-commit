@@ -1,0 +1,77 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "git-ai-commit"
+version = "1.0.0"
+description = "Generate beautiful, conventional git commit messages from staged diffs using AI"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    { name = "Nous Research", email = "contact@nousresearch.com" },
+]
+keywords = ["git", "ai", "commit", "conventional-commits", "openai", "anthropic", "ollama"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Version Control :: Git",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = [
+    "rich>=13.0",
+    "click>=8.0",
+    "pyyaml>=6.0",
+    "httpx>=0.25",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.0"]
+anthropic = ["anthropic>=0.20"]
+all = ["openai>=1.0", "anthropic>=0.20"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-mock>=3.0",
+    "ruff>=0.4",
+    "mypy>=1.0",
+]
+
+[project.scripts]
+git-ai-commit = "git_ai_commit.cli:main"
+gac = "git_ai_commit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/nousresearch/git-ai-commit"
+Documentation = "https://github.com/nousresearch/git-ai-commit#readme"
+Repository = "https://github.com/nousresearch/git-ai-commit"
+Issues = "https://github.com/nousresearch/git-ai-commit/issues"
+Changelog = "https://github.com/nousresearch/git-ai-commit/blob/main/CHANGELOG.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["git_ai_commit"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "SIM", "RUF"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
