@@ -9,7 +9,13 @@ import click
 from . import __version__
 from .ai_backends import get_backend
 from .config import load_config
-from .git_utils import commit, get_branch_name, get_staged_diff, get_staged_files, get_staged_stat, is_git_repo
+from .git_utils import (
+    commit,
+    get_staged_diff,
+    get_staged_files,
+    get_staged_stat,
+    is_git_repo,
+)
 from .models import Backend, CommitMessage, Config
 from .ui import (
     console,

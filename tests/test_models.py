@@ -1,6 +1,6 @@
 """Tests for git-ai-commit models."""
 
-from git_ai_commit.models import CommitMessage, CommitType, Config, Backend
+from git_ai_commit.models import Backend, CommitMessage, CommitType, Config
 
 
 class TestCommitType:

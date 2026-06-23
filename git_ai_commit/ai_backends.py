@@ -37,7 +37,9 @@ Rules:
 {emoji_instruction}
 
 Respond ONLY with valid JSON in this exact format:
-{{"type": "<type>", "scope": "<scope or null>", "subject": "<subject>", "body": "<body or null>", "breaking": false, "breaking_description": null}}
+{{"type": "<type>", "scope": "<scope or null>",
+"subject": "<subject>", "body": "<body or null>",
+"breaking": false, "breaking_description": null}}
 """
 
 USER_PROMPT = """Generate a commit message for this staged diff:

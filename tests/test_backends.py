@@ -1,7 +1,6 @@
 """Tests for git-ai-commit AI backends."""
 
 import json
-from unittest.mock import MagicMock, patch
 
 import pytest
 
@@ -11,7 +10,10 @@ from git_ai_commit.models import CommitType
 
 class TestParseCommitJson:
     def test_parse_simple(self):
-        raw = '{"type": "feat", "scope": null, "subject": "add auth", "body": null, "breaking": false, "breaking_description": null}'
+        raw = (
+            '{"type": "feat", "scope": null, "subject": "add auth", '
+            '"body": null, "breaking": false, "breaking_description": null}'
+        )
         msg = _parse_commit_json(raw)
         assert msg.type == CommitType.FEAT
         assert msg.scope is None
@@ -33,7 +35,12 @@ class TestParseCommitJson:
         assert msg.body == "Added retry logic with exponential backoff"
 
     def test_parse_with_extra_text(self):
-        raw = 'Here is the commit message:\n{"type": "chore", "scope": null, "subject": "update deps", "body": null, "breaking": false, "breaking_description": null}\nDone.'
+        raw = (
+            'Here is the commit message:\n'
+            '{"type": "chore", "scope": null, "subject": "update deps", '
+            '"body": null, "breaking": false, "breaking_description": null}'
+            '\nDone.'
+        )
         msg = _parse_commit_json(raw)
         assert msg.type == CommitType.CHORE
         assert msg.subject == "update deps"
