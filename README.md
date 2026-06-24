@@ -426,3 +426,13 @@ If this tool saves you time, give it a ⭐!
 [⬆ Back to top](#-git-ai-commit)
 
 </div>
+
+---
+
+## ☕ Support
+
+If you find this tool useful, consider buying me a coffee!
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/zzc18429155766)
+
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor%20on%20GitHub-ea4aaa?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sponsors/zzc18429155766)
