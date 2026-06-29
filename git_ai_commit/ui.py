@@ -83,9 +83,7 @@ def print_diff_summary(files: list[str], stat: str) -> None:
 
 def print_generating(backend: str, model: str) -> None:
     """Print generating message."""
-    console.print(
-        f"  [dim]⏳ Generating with [bold]{backend}[/bold] ({model})...[/dim]"
-    )
+    console.print(f"  [dim]⏳ Generating with [bold]{backend}[/bold] ({model})...[/dim]")
 
 
 def print_commit_message(msg: CommitMessage, emoji: bool = False) -> None:

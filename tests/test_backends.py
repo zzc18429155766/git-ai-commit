@@ -21,14 +21,16 @@ class TestParseCommitJson:
         assert msg.body is None
 
     def test_parse_with_body(self):
-        raw = json.dumps({
-            "type": "fix",
-            "scope": "api",
-            "subject": "handle timeout",
-            "body": "Added retry logic with exponential backoff",
-            "breaking": False,
-            "breaking_description": None,
-        })
+        raw = json.dumps(
+            {
+                "type": "fix",
+                "scope": "api",
+                "subject": "handle timeout",
+                "body": "Added retry logic with exponential backoff",
+                "breaking": False,
+                "breaking_description": None,
+            }
+        )
         msg = _parse_commit_json(raw)
         assert msg.type == CommitType.FIX
         assert msg.scope == "api"
@@ -36,10 +38,10 @@ class TestParseCommitJson:
 
     def test_parse_with_extra_text(self):
         raw = (
-            'Here is the commit message:\n'
+            "Here is the commit message:\n"
             '{"type": "chore", "scope": null, "subject": "update deps", '
             '"body": null, "breaking": false, "breaking_description": null}'
-            '\nDone.'
+            "\nDone."
         )
         msg = _parse_commit_json(raw)
         assert msg.type == CommitType.CHORE
@@ -50,14 +52,16 @@ class TestParseCommitJson:
             _parse_commit_json("not json at all")
 
     def test_parse_breaking_change(self):
-        raw = json.dumps({
-            "type": "feat",
-            "scope": "api",
-            "subject": "new response format",
-            "body": "Changed response structure",
-            "breaking": True,
-            "breaking_description": "Response no longer includes 'data' wrapper",
-        })
+        raw = json.dumps(
+            {
+                "type": "feat",
+                "scope": "api",
+                "subject": "new response format",
+                "body": "Changed response structure",
+                "breaking": True,
+                "breaking_description": "Response no longer includes 'data' wrapper",
+            }
+        )
         msg = _parse_commit_json(raw)
         assert msg.breaking is True
         assert "data" in (msg.breaking_description or "")

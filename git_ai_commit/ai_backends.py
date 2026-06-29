@@ -65,8 +65,7 @@ def _build_system_prompt(
     emoji_inst = ""
     if emoji:
         emoji_inst = (
-            "Prefix the subject with the appropriate gitmoji. "
-            "Example: ✨ add user authentication"
+            "Prefix the subject with the appropriate gitmoji. Example: ✨ add user authentication"
         )
 
     return SYSTEM_PROMPT.format(
@@ -106,7 +105,7 @@ class OpenAIBackend:
         except ImportError:
             print(
                 "Error: openai package not installed. "
-                    "Install with: pip install 'git-ai-commit[openai]'",
+                "Install with: pip install 'git-ai-commit[openai]'",
                 file=sys.stderr,
             )
             sys.exit(1)
@@ -151,7 +150,7 @@ class AnthropicBackend:
         except ImportError:
             print(
                 "Error: anthropic package not installed. "
-                    "Install with: pip install 'git-ai-commit[anthropic]'",
+                "Install with: pip install 'git-ai-commit[anthropic]'",
                 file=sys.stderr,
             )
             sys.exit(1)
@@ -218,8 +217,7 @@ class OllamaBackend:
             raw = data["message"]["content"]
         except httpx.ConnectError:
             print(
-                f"Error: Could not connect to Ollama at {base_url}. "
-                "Is Ollama running?",
+                f"Error: Could not connect to Ollama at {base_url}. Is Ollama running?",
                 file=sys.stderr,
             )
             sys.exit(1)

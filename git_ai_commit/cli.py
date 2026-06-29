@@ -46,9 +46,7 @@ from .ui import (
 @click.option("--signoff", is_flag=True, help="Add Signed-off-by trailer")
 @click.option("--dry-run", is_flag=True, help="Show message without committing")
 @click.option("--amend", is_flag=True, help="Amend the last commit")
-@click.option(
-    "-l", "--language", help="Language for commit message (e.g. en, zh, ja)"
-)
+@click.option("-l", "--language", help="Language for commit message (e.g. en, zh, ja)")
 @click.option("-v", "--verbose", is_flag=True, help="Show detailed output")
 def main(
     backend: str | None,
@@ -130,9 +128,8 @@ def main(
 
     # Add API keys from environment
     import os
-    ai_config["api_key"] = os.environ.get(
-        f"{config.backend.value.upper()}_API_KEY", ""
-    )
+
+    ai_config["api_key"] = os.environ.get(f"{config.backend.value.upper()}_API_KEY", "")
 
     print_generating(config.backend.value, config.default_model)
 

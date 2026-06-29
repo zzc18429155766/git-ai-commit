@@ -112,9 +112,7 @@ class Config:
     language: str = "en"
     emoji: bool = False
     signoff: bool = False
-    allowed_types: list[str] = field(
-        default_factory=lambda: [t.value for t in CommitType]
-    )
+    allowed_types: list[str] = field(default_factory=lambda: [t.value for t in CommitType])
 
     @property
     def default_model(self) -> str:
