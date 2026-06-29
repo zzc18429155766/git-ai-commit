@@ -1,6 +1,5 @@
 """Tests for git-ai-commit config loading."""
 
-import pytest
 import yaml
 
 from git_ai_commit.config import load_config

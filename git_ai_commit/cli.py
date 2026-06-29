@@ -16,7 +16,7 @@ from .git_utils import (
     get_staged_stat,
     is_git_repo,
 )
-from .models import Backend, CommitMessage, Config
+from .models import Backend
 from .ui import (
     console,
     print_banner,

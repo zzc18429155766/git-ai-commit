@@ -5,12 +5,11 @@ from __future__ import annotations
 from rich.console import Console
 from rich.panel import Panel
 from rich.prompt import Prompt
-from rich.syntax import Syntax
 from rich.table import Table
 from rich.text import Text
 from rich.theme import Theme
 
-from .models import CommitMessage, CommitType
+from .models import CommitMessage
 
 custom_theme = Theme(
     {

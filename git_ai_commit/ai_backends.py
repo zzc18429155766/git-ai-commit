@@ -105,7 +105,8 @@ class OpenAIBackend:
             import openai
         except ImportError:
             print(
-                "Error: openai package not installed. Install with: pip install 'git-ai-commit[openai]'",
+                "Error: openai package not installed. "
+                    "Install with: pip install 'git-ai-commit[openai]'",
                 file=sys.stderr,
             )
             sys.exit(1)
@@ -149,7 +150,8 @@ class AnthropicBackend:
             import anthropic
         except ImportError:
             print(
-                "Error: anthropic package not installed. Install with: pip install 'git-ai-commit[anthropic]'",
+                "Error: anthropic package not installed. "
+                    "Install with: pip install 'git-ai-commit[anthropic]'",
                 file=sys.stderr,
             )
             sys.exit(1)

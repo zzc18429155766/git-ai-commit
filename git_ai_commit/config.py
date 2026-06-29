@@ -9,7 +9,6 @@ import yaml
 
 from .models import Backend, Config
 
-
 DEFAULT_CONFIG_FILENAMES = [".git-ai-commit.yml", ".git-ai-commit.yaml"]
 
 
