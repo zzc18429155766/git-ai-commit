@@ -6,7 +6,7 @@ import json
 import os
 import re
 import sys
-from typing import Protocol
+from typing import Any, Protocol
 
 import httpx
 
@@ -16,7 +16,7 @@ from .models import Backend, CommitMessage, CommitType
 class AIBackend(Protocol):
     """Protocol for AI backends."""
 
-    def generate(self, diff: str, config: dict) -> CommitMessage: ...
+    def generate(self, diff: str, config: dict[str, Any]) -> CommitMessage: ...
 
 
 SYSTEM_PROMPT = """You are an expert developer creating git commit messages.
@@ -99,7 +99,7 @@ def _parse_commit_json(raw: str) -> CommitMessage:
 class OpenAIBackend:
     """OpenAI API backend."""
 
-    def generate(self, diff: str, config: dict) -> CommitMessage:
+    def generate(self, diff: str, config: dict[str, Any]) -> CommitMessage:
         try:
             import openai
         except ImportError:
@@ -144,7 +144,7 @@ class OpenAIBackend:
 class AnthropicBackend:
     """Anthropic Claude API backend."""
 
-    def generate(self, diff: str, config: dict) -> CommitMessage:
+    def generate(self, diff: str, config: dict[str, Any]) -> CommitMessage:
         try:
             import anthropic
         except ImportError:
@@ -187,7 +187,7 @@ class AnthropicBackend:
 class OllamaBackend:
     """Local Ollama API backend."""
 
-    def generate(self, diff: str, config: dict) -> CommitMessage:
+    def generate(self, diff: str, config: dict[str, Any]) -> CommitMessage:
         base_url = config.get("ollama_url", "http://localhost:11434")
         model = config.get("model", "llama3.1")
         system = _build_system_prompt(
@@ -241,4 +241,4 @@ def get_backend(backend: Backend) -> AIBackend:
     if cls is None:
         print(f"Error: Unknown backend '{backend}'", file=sys.stderr)
         sys.exit(1)
-    return cls()  # type: ignore[return-value]
+    return cls()  # type: ignore[no-any-return]

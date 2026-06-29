@@ -24,7 +24,7 @@ def run_git(*args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
         if check:
             print(f"Error running git: {e.stderr.strip()}", file=sys.stderr)
             sys.exit(1)
-        return e
+        return e  # type: ignore[return-value]
 
 
 def is_git_repo() -> bool:
