@@ -7,7 +7,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/git-ai-commit?color=blue&logo=pypi&logoColor=white&style=for-the-badge)](https://pypi.org/project/git-ai-commit/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge&logo=opensourceinitiative)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/)
-[![GitHub Stars](https://img.shields.io/github/stars/nousresearch/git-ai-commit?style=for-the-badge&logo=github)](https://github.com/nousresearch/git-ai-commit)
+[![GitHub Stars](https://img.shields.io/github/stars/zzc18429155766/git-ai-commit?style=for-the-badge&logo=github)](https://github.com/zzc18429155766/git-ai-commit)
 [![Downloads](https://img.shields.io/pypi/dm/git-ai-commit?style=for-the-badge&logo=pypi)](https://pypi.org/project/git-ai-commit/)
 
 ---
@@ -104,7 +104,7 @@ brew install nousresearch/tap/git-ai-commit
 ### From source
 
 ```bash
-git clone https://github.com/nousresearch/git-ai-commit.git
+git clone https://github.com/zzc18429155766/git-ai-commit.git
 cd git-ai-commit
 pip install -e ".[all]"
 ```
@@ -356,7 +356,7 @@ fi
 
 ```bash
 # Clone
-git clone https://github.com/nousresearch/git-ai-commit.git
+git clone https://github.com/zzc18429155766/git-ai-commit.git
 cd git-ai-commit
 
 # Install dev dependencies
